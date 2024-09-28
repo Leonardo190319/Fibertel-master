@@ -1,0 +1,102 @@
+<app-buy></app-buy>
+<main class="col-start-1 col-end-13 row-start-2 row-end-3 bg-neutral-200">
+
+    <h1 class="text-xl sm:text-2xl text-center py-4 roboto-bold">RECORRIDO DE COMPRA</h1>  
+
+    <!-- Dibulo de la pasarela -->
+
+    <div class="mx-4 md:mx-10 relative flex items-center justify-center">
+        <!-- Botón -->
+        <button class="bg-transparent rounded-full transform rotate-180 absolute left-0 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+        
+        <!-- Contenedor de círculos y lineas -->
+        <div class="flex items-center flex-grow justify-center mx-10 md:mx-20">
+            <!-- Círculo -->
+            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-500"></div>
+            
+            <!-- Línea -->
+            <div class="h-1 bg-orange-500 flex-grow max-w-[380px]"></div>
+            
+            <!-- Círculo -->
+            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-500"></div>
+            
+            <!-- Línea -->
+            <div class="h-1 bg-orange-500 flex-grow max-w-[380px]"></div>
+            
+            <!-- Círculo -->
+            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-500"></div>
+            
+            <!-- Línea -->
+            <div class="h-1 bg-black flex-grow max-w-[380px]"></div>
+            
+            <!-- Círculo -->
+            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-black"></div>
+        </div>
+    </div>
+
+   <!-- Formulario del Cliente -->
+    <div class="flex flex-wrap lg:flex-nowrap mt-6 justify-between items-start mx-4 md:mx-28">
+        <!-- Sección del formulario -->
+        <div class="w-full lg:max-w-2xl px-4">
+            <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl mt-4 text-black roboto-bold">COMPROBANTE</h3>
+            <p class="text-xs sm:text-sm text-black mb-4 roboto">Ingresar datos para el comprobante de la compra</p>
+            <!-- Encabezado y boton -->
+            <div class="bg-blue-500 text-white py-2 rounded-t-lg flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-10 sm:h-10" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M222-80q-43.75 0-74.37-30.63Q117-141.25 117-185v-125h127v-570l59.8 60 59.8-60 59.8 60 59.8-60 59.8 60 60-60 60 60 60-60 60 60 60-60v695q0 43.75-30.62 74.37Q781.75-80 738-80H222Zm516-60q20 0 32.5-12.5T783-185v-595H304v470h389v125q0 20 12.5 32.5T738-140ZM357-622v-60h240v60H357Zm0 134v-60h240v60H357Zm333-134q-12 0-21-9t-9-21q0-12 9-21t21-9q12 0 21 9t9 21q0 12-9 21t-21 9Zm0 129q-12 0-21-9t-9-21q0-12 9-21t21-9q12 0 21 9t9 21q0 12-9 21t-21 9ZM221-140h412v-110H177v65q0 20 12.65 32.5T221-140Zm-44 0v-110 110Z"/></svg>
+            </div>
+
+            <!-- Boton -->
+            <div class="flex justify-center items-center my-4">
+                <!-- Etiqueta de estado (BOLETA) -->
+                <span class="mr-4 text-black font-medium roboto-bold">BOLETA</span>
+                
+                <!-- Switch -->
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" class="sr-only peer" [(ngModel)]="switchState">
+                    <div class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 rounded-full peer dark:bg-black"></div>
+                    <div class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform peer-checked:translate-x-5"></div>
+                </label>
+                
+                <!-- Etiqueta de estado (FACTURA) -->
+                <span class="ml-4 text-black font-medium roboto-bold">FACTURA</span>
+            </div>
+
+            <!-- Primer contenedor (BOLETA) -->
+            <div *ngIf="!switchState" class="bg-black text-white py-2 rounded-t-lg flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-10 sm:h-10" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M222-80q-43.75 0-74.37-30.63Q117-141.25 117-185v-125h127v-570l59.8 60 59.8-60 59.8 60 59.8-60 59.8 60 60-60 60 60 60-60 60 60 60-60v695q0 43.75-30.62 74.37Q781.75-80 738-80H222Zm516-60q20 0 32.5-12.5T783-185v-595H304v470h389v125q0 20 12.5 32.5T738-140ZM357-622v-60h240v60H357Zm0 134v-60h240v60H357Zm333-134q-12 0-21-9t-9-21q0-12 9-21t21-9q12 0 21 9t9 21q0 12-9 21t-21 9Zm0 129q-12 0-21-9t-9-21q0-12 9-21t21-9q12 0 21 9t9 21q0 12-9 21t-21 9ZM221-140h412v-110H177v65q0 20 12.65 32.5T221-140Zm-44 0v-110 110Z"/></svg>
+            </div>
+
+            <!-- Formulario Boleta -->
+            <form *ngIf="!switchState" class="bg-transparent shadow-md rounded px-4 py-6">
+                <input class="mb-4 shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="BOLETA">
+                <input class="mb-4 shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="DNI">
+                <button class="w-full bg-orange-500 hover:bg-orange-700 text-white roboto-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button">CONTINUAR</button>
+            </form>
+
+            <!-- Segundo contenedor (FACTURA) -->
+            <div *ngIf="switchState" class="bg-black text-white py-2 rounded-t-lg flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 sm:w-10 sm:h-10" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M222-80q-43.75 0-74.37-30.63Q117-141.25 117-185v-125h127v-570l59.8 60 59.8-60 59.8 60 59.8-60 59.8 60 60-60 60 60 60-60 60 60 60-60v695q0 43.75-30.62 74.37Q781.75-80 738-80H222Zm516-60q20 0 32.5-12.5T783-185v-595H304v470h389v125q0 20 12.5 32.5T738-140ZM357-622v-60h240v60H357Zm0 134v-60h240v60H357Zm333-134q-12 0-21-9t-9-21q0-12 9-21t21-9q12 0 21 9t9 21q0 12-9 21t-21 9Zm0 129q-12 0-21-9t-9-21q0-12 9-21t21-9q12 0 21 9t9 21q0 12-9 21t-21 9ZM221-140h412v-110H177v65q0 20 12.65 32.5T221-140Zm-44 0v-110 110Z"/></svg>
+            </div>
+            <!-- Formulario FACTURA -->
+            <form *ngIf="switchState" class="bg-transparent shadow-md rounded px-4 py-6">
+                <input class="mb-4 shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="FACTURA">
+                <input class="mb-4 shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="RUC">
+                <input class="mb-4 shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="RAZON SOCIAL">
+                <input class="mb-4 shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="DOMICIOLIO FISCAL">
+                <button class="w-full bg-orange-500 hover:bg-orange-700 text-white roboto-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline" type="button">CONTINUAR</button>
+            </form>
+        </div>
+
+        <!-- Resumen de Compra -->
+        <div class="w-full lg:max-w-md">
+            <app-summary></app-summary>
+        </div>
+    </div>
+    <!-- ¿Necesitas Ayuda? -->
+    <app-aid></app-aid>
+</main>
+<app-footer></app-footer>
